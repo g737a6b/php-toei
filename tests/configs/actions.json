@@ -1,0 +1,23 @@
+{
+	"register": {
+		"table": "users",
+		"identifyBy": "id",
+		"sortBy": "created"
+	},
+	"withdraw": {
+		"table": "users",
+		"identifyBy": "id",
+		"sortBy": "deleted",
+		"condition": "created > '2000-01-01 00:00:00'"
+	},
+	"send_message": {
+		"table": "messages",
+		"identifyBy": "sender",
+		"sortBy": "created"
+	},
+	"recieve_message": {
+		"table": "messages",
+		"identifyBy": "receiver",
+		"sortBy": "created"
+	}
+}
