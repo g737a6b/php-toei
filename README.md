@@ -1,4 +1,4 @@
-# Toei
+# Toei [![CircleCI](https://circleci.com/gh/g737a6b/php-toei.svg?style=svg)](https://circleci.com/gh/g737a6b/php-toei)
 
 PHP library to integrate scattered events in RDB.
 
