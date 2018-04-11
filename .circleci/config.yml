@@ -12,6 +12,9 @@ jobs:
           MYSQL_PASSWORD: ""
     working_directory: ~/repo
     steps:
+      - run:
+          name: Install PHP extensions
+          command: sudo docker-php-ext-install pdo_mysql
       - checkout
       - restore_cache:
           keys:
