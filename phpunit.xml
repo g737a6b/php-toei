@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true">
 	<php>
-		<const name="DB_DSN" value="" />
+		<const name="DB_DSN" value="mysql:dbname=toei_test;host=127.0.0.1" />
 		<const name="DB_NAME" value="toei_test" />
-		<const name="DB_USER" value="" />
+		<const name="DB_USER" value="root" />
 		<const name="DB_PASSWORD" value="" />
 	</php>
 	<testsuites>
