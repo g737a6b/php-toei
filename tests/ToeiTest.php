@@ -21,7 +21,7 @@ class ToeiTest extends TestCase{
 	}
 
 	public function getDataSet(){
-		return $this->createMySQLXMLDataSet(__DIR__."/fixtures/toei.xml");
+		return $this->createXmlDataSet(__DIR__."/fixtures/toei.xml");
 	}
 
 	public function setUp(){

@@ -1,62 +1,69 @@
 <?xml version="1.0"?>
-<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<database name="toei_test">
-	<table_data name="messages">
-	<row>
-		<field name="id">1</field>
-		<field name="sender">1</field>
-		<field name="receiver">2</field>
-		<field name="body">Hi!</field>
-		<field name="created">2017-01-21 12:01:44</field>
-	</row>
-	<row>
-		<field name="id">2</field>
-		<field name="sender">2</field>
-		<field name="receiver">3</field>
-		<field name="body">Hi!</field>
-		<field name="created">2017-02-04 21:54:17</field>
-	</row>
-	<row>
-		<field name="id">3</field>
-		<field name="sender">1</field>
-		<field name="receiver">3</field>
-		<field name="body">Hi!</field>
-		<field name="created">2017-02-05 12:03:01</field>
-	</row>
-	<row>
-		<field name="id">4</field>
-		<field name="sender">2</field>
-		<field name="receiver">1</field>
-		<field name="body">Bye!</field>
-		<field name="created">2017-03-20 17:54:46</field>
-	</row>
-	<row>
-		<field name="id">5</field>
-		<field name="sender">2</field>
-		<field name="receiver">3</field>
-		<field name="body">Bye!</field>
-		<field name="created">2017-03-20 17:56:23</field>
-	</row>
-	</table_data>
-	<table_data name="users">
-	<row>
-		<field name="id">1</field>
-		<field name="name">Suzuki</field>
-		<field name="created">2017-01-01 12:04:11</field>
-		<field name="deleted" xsi:nil="true" />
-	</row>
-	<row>
-		<field name="id">2</field>
-		<field name="name">Tanaka</field>
-		<field name="created">2017-01-21 09:57:48</field>
-		<field name="deleted">2017-03-20 18:03:30</field>
-	</row>
-	<row>
-		<field name="id">3</field>
-		<field name="name">Yoshida</field>
-		<field name="created">2017-02-04 20:47:25</field>
-		<field name="deleted" xsi:nil="true" />
-	</row>
-	</table_data>
-</database>
-</mysqldump>
+<dataset>
+	<table name="messages">
+		<column>id</column>
+		<column>sender</column>
+		<column>receiver</column>
+		<column>body</column>
+		<column>created</column>
+		<row>
+			<value>1</value>
+			<value>1</value>
+			<value>2</value>
+			<value>Hi!</value>
+			<value>2017-01-21 12:01:44</value>
+		</row>
+		<row>
+			<value>2</value>
+			<value>2</value>
+			<value>3</value>
+			<value>Hi!</value>
+			<value>2017-02-04 21:54:17</value>
+		</row>
+		<row>
+			<value>3</value>
+			<value>1</value>
+			<value>3</value>
+			<value>Hi!</value>
+			<value>2017-02-05 12:03:01</value>
+		</row>
+		<row>
+			<value>4</value>
+			<value>2</value>
+			<value>1</value>
+			<value>Bye!</value>
+			<value>2017-03-20 17:54:46</value>
+		</row>
+		<row>
+			<value>5</value>
+			<value>2</value>
+			<value>3</value>
+			<value>Bye!</value>
+			<value>2017-03-20 17:56:23</value>
+		</row>
+	</table>
+	<table name="users">
+		<column>id</column>
+		<column>name</column>
+		<column>created</column>
+		<column>deleted</column>
+		<row>
+			<value>1</value>
+			<value>Suzuki</value>
+			<value>2017-01-01 12:04:11</value>
+			<null />
+		</row>
+		<row>
+			<value>2</value>
+			<value>Tanaka</value>
+			<value>2017-01-21 09:57:48</value>
+			<value>2017-03-20 18:03:30</value>
+		</row>
+		<row>
+			<value>3</value>
+			<value>Yoshida</value>
+			<value>2017-02-04 20:47:25</value>
+			<null />
+		</row>
+	</table>
+</dataset>
