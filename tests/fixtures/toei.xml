@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <dataset>
 	<table name="messages">
-		<column>id</column>
 		<column>sender</column>
 		<column>receiver</column>
 		<column>body</column>
 		<column>created</column>
 		<row>
-			<value>1</value>
 			<value>1</value>
 			<value>2</value>
 			<value>Hi!</value>
@@ -15,27 +13,23 @@
 		</row>
 		<row>
 			<value>2</value>
-			<value>2</value>
 			<value>3</value>
 			<value>Hi!</value>
 			<value>2017-02-04 21:54:17</value>
 		</row>
 		<row>
-			<value>3</value>
 			<value>1</value>
 			<value>3</value>
 			<value>Hi!</value>
 			<value>2017-02-05 12:03:01</value>
 		</row>
 		<row>
-			<value>4</value>
 			<value>2</value>
 			<value>1</value>
 			<value>Bye!</value>
 			<value>2017-03-20 17:54:46</value>
 		</row>
 		<row>
-			<value>5</value>
 			<value>2</value>
 			<value>3</value>
 			<value>Bye!</value>
