@@ -7,17 +7,21 @@ PHP library to integrate scattered events in RDB.
 ### 1-1. RDB (precondition)
 
 ```sql
--- table "users"
-INSERT INTO `users` (`id`, `name`, `created`, `deleted`) VALUES (1, 'Suzuki', '2017-01-01 12:04:11', NULL);
-INSERT INTO `users` (`id`, `name`, `created`, `deleted`) VALUES (2, 'Tanaka', '2017-01-21 09:57:48', '2017-03-20 18:03:30');
-INSERT INTO `users` (`id`, `name`, `created`, `deleted`) VALUES (3, 'Yoshida', '2017-02-04 20:47:25', NULL);
+-- Table "users"
+CREATE TABLE `users` (`id` INT, `name` TEXT, `created` DATETIME, `deleted` DATETIME);
+INSERT INTO `users` (`id`, `name`, `created`, `deleted`)
+VALUES (1, 'Suzuki', '2017-01-01 12:04:11', NULL),
+	(2, 'Tanaka', '2017-01-21 09:57:48', '2017-03-20 18:03:30'),
+	(3, 'Yoshida', '2017-02-04 20:47:25', NULL);
 
--- table "messages"
-INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`) VALUES (1, 2, 'Hi!', '2017-01-21 12:01:44');
-INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`) VALUES (2, 3, 'Hi!', '2017-02-04 21:54:17');
-INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`) VALUES (1, 3, 'Hi!', '2017-02-05 12:03:01');
-INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`) VALUES (2, 1, 'Bye!', '2017-03-20 17:54:46');
-INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`) VALUES (2, 3, 'Bye!', '2017-03-20 17:56:23');
+-- Table "messages"
+CREATE TABLE `messages` (`sender` INT, `receiver` INT, `body` TEXT, `created` DATETIME);
+INSERT INTO `messages` (`sender`, `receiver`, `body`, `created`)
+VALUES (1, 2, 'Hi!', '2017-01-21 12:01:44'),
+	(2, 3, 'Hi!', '2017-02-04 21:54:17'),
+	(1, 3, 'Hi!', '2017-02-05 12:03:01'),
+	(2, 1, 'Bye!', '2017-03-20 17:54:46'),
+	(2, 3, 'Bye!', '2017-03-20 17:56:23');
 ```
 
 ### 1-2. config.json
@@ -132,4 +136,4 @@ Add a dependency to your project's `composer.json` file.
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017 [Hiroyuki Suzuki](https://mofg.net)
+Copyright (c) 2018 [Hiroyuki Suzuki](https://mofg.net)
