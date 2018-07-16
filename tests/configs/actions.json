@@ -13,11 +13,17 @@
 	"send_message": {
 		"table": "messages",
 		"identifyBy": "sender",
-		"sortBy": "created"
+		"sortBy": "created",
+		"options": [
+			"body"
+		]
 	},
 	"recieve_message": {
 		"table": "messages",
 		"identifyBy": "receiver",
-		"sortBy": "created"
+		"sortBy": "created",
+		"options": [
+			"body"
+		]
 	}
 }

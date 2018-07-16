@@ -46,19 +46,19 @@ class ToeiTest extends TestCase{
 SELECT a.*
 FROM (
 	(
-		SELECT 'register' as action, id as id, created as time
+		SELECT 'register' as action, id as id, created as time, null as option1
 		FROM users
 		WHERE id = 2 AND created IS NOT NULL
 	) union all (
-		SELECT 'withdraw' as action, id as id, deleted as time
+		SELECT 'withdraw' as action, id as id, deleted as time, null as option1
 		FROM users
 		WHERE id = 2 AND deleted IS NOT NULL AND (created > '2000-01-01 00:00:00')
 	) union all (
-		SELECT 'send_message' as action, sender as id, created as time
+		SELECT 'send_message' as action, sender as id, created as time, body as option1
 		FROM messages
 		WHERE sender = 2 AND created IS NOT NULL
 	) union all (
-		SELECT 'recieve_message' as action, receiver as id, created as time
+		SELECT 'recieve_message' as action, receiver as id, created as time, body as option1
 		FROM messages
 		WHERE receiver = 2 AND created IS NOT NULL
 	)
@@ -70,32 +70,38 @@ EOD
 			[
 				"action" => "register",
 				"id" => "2",
-				"time" => "2017-01-21 09:57:48"
+				"time" => "2017-01-21 09:57:48",
+				"option1" => null
 			],
 			[
 				"action" => "recieve_message",
 				"id" => "2",
-				"time" => "2017-01-21 12:01:44"
+				"time" => "2017-01-21 12:01:44",
+				"option1" => "Hi!"
 			],
 			[
 				"action" => "send_message",
 				"id" => "2",
-				"time" => "2017-02-04 21:54:17"
+				"time" => "2017-02-04 21:54:17",
+				"option1" => "Hi!"
 			],
 			[
 				"action" => "send_message",
 				"id" => "2",
-				"time" => "2017-03-20 17:54:46"
+				"time" => "2017-03-20 17:54:46",
+				"option1" => "Bye!"
 			],
 			[
 				"action" => "send_message",
 				"id" => "2",
-				"time" => "2017-03-20 17:56:23"
+				"time" => "2017-03-20 17:56:23",
+				"option1" => "Bye!"
 			],
 			[
 				"action" => "withdraw",
 				"id" => "2",
-				"time" => "2017-03-20 18:03:30"
+				"time" => "2017-03-20 18:03:30",
+				"option1" => null
 			]
 		];
 		return [

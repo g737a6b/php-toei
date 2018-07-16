@@ -60,11 +60,24 @@ class Toei{
 	}
 
 	/**
+	 * @return integer
+	 */
+	protected function getOptionsNumber(){
+		$count = 0;
+		foreach($this->config as $i){
+			if( empty($i->options) ) continue;
+			$count = max($count, count($i->options));
+		}
+		return $count;
+	}
+
+	/**
 	 * @return string
 	 */
-	private function constructQuery(){
+	protected function constructQuery(){
 		if( !isset($this->id) ) return "";
 		$subQueries = [];
+		$optionsNumber = $this->getOptionsNumber();
 		foreach($this->config as $name => $data){
 			if( !is_string($name) || $name === "" || empty($data->table) ) continue;
 			$idColumn = ( !empty($data->identifyBy) ) ? $data->identifyBy : "id";
@@ -75,6 +88,10 @@ class Toei{
 				"{$idColumn} as id",
 				"{$sortColumn} as time"
 			];
+			for($i = 1; $i <= $optionsNumber; $i++){
+				$optionColumn = ( !isset($data->options[$i - 1]) ) ? "null" : $data->options[$i - 1];
+				$fields[] = "{$optionColumn} as option{$i}";
+			}
 			$fieldsString = implode(", ", $fields);
 
 			$conditionString = "{$idColumn} = {$this->id} AND {$sortColumn} IS NOT NULL";
