@@ -24,18 +24,19 @@ class ToeiTest extends TestCase{
 		return $this->createXmlDataSet(__DIR__."/fixtures/toei.xml");
 	}
 
-	public function setUp(){
-		parent::setUp();
-		$config = json_decode(file_get_contents(__DIR__."/configs/actions.json"));
-		$this->Toei = new Toei(self::$PDO, $config);
+	public function testGetRowCount(){
+		$this->assertSame(3, $this->getConnection()->getRowCount("users"));
 	}
 
 	/**
 	 * @dataProvider projectProvider
 	 */
 	public function testProject($id, $exec, $expected){
-		$this->Toei->setId($id);
-		$result = $this->Toei->project($exec);
+		$config = json_decode(file_get_contents(__DIR__."/configs/actions.json"));
+		$Toei = new Toei(self::$PDO, $config);
+
+		$Toei->setId($id);
+		$result = $Toei->project($exec);
 		$this->assertSame($expected, $result);
 	}
 
@@ -99,7 +100,7 @@ EOD
 		];
 		return [
 			[2, false, $expecteds[0]],
-			// [2, true, $expecteds[1]]
+			[2, true, $expecteds[1]]
 		];
 	}
 }
