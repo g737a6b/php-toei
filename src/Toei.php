@@ -7,9 +7,9 @@ use PDO;
  *
  * @package Toei
  * @author Hiroyuki Suzuki
- * @copyright Copyright (c) 2017 Hiroyuki Suzuki mofg.net
+ * @copyright Copyright (c) 2019 Hiroyuki Suzuki mofg.net
  * @license http://opensource.org/licenses/MIT The MIT License
- * @version 1.1.0
+ * @version 1.1.1
  */
 class Toei{
 	/**

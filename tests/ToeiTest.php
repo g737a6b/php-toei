@@ -29,7 +29,7 @@ class ToeiTest extends TestCase{
 	}
 
 	/**
-	 * @dataProvider projectProvider
+	 * @dataProvider providerForTestProject
 	 */
 	public function testProject($id, $exec, $expected){
 		$config = json_decode(file_get_contents(__DIR__."/configs/actions.json"));
@@ -40,7 +40,7 @@ class ToeiTest extends TestCase{
 		$this->assertSame($expected, $result);
 	}
 
-	public function projectProvider(){
+	public function providerForTestProject(){
 		$expecteds = [];
 		$expecteds[0] = preg_replace("/\s+/", " ", <<< 'EOD'
 SELECT a.*
