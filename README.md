@@ -1,6 +1,6 @@
 # Toei [![CircleCI](https://circleci.com/gh/g737a6b/toei.svg?style=svg)](https://circleci.com/gh/g737a6b/toei)
 
-PHP library to integrate scattered events in RDB. .
+PHP library to integrate scattered events in RDB.
 
 ## Examples of use
 
