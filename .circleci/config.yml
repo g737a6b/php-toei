@@ -20,12 +20,12 @@ jobs:
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
+          - v2-dependencies-{{ checksum "composer.json" }}
       - run: composer install -n --prefer-dist
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+          key: v2-dependencies-{{ checksum "composer.json" }}
       - run: sudo apt install mysql-client
       - run: mysql -h 127.0.0.1 -u root toei_test -e "create table users (id int, name text, created datetime, deleted datetime)"
       - run: mysql -h 127.0.0.1 -u root toei_test -e "create table messages (sender int, receiver int, body text, created datetime)"
