@@ -127,7 +127,7 @@ Add a dependency to your project's `composer.json` file.
 ```json
 {
 	"require": {
-		"g737a6b/php-toei": "*"
+		"g737a6b/toei": "*"
 	}
 }
 ```
