@@ -2,9 +2,9 @@
 
 PHP library to integrate scattered events in RDB.
 
-## 1. Examples of use
+## Examples of use
 
-### 1-1. RDB (precondition)
+### RDB
 
 ```sql
 -- Table "users"
@@ -24,7 +24,7 @@ VALUES (1, 2, 'Hi!', '2017-01-21 12:01:44'),
 	(2, 3, 'Bye!', '2017-03-20 17:56:23');
 ```
 
-### 1-2. config.json
+### config.json
 
 ```json
 {
@@ -52,7 +52,7 @@ VALUES (1, 2, 'Hi!', '2017-01-21 12:01:44'),
 }
 ```
 
-### 1-3. PHP
+### PHP
 
 ```php
 $config = json_decode(file_get_contents("config.json"));
@@ -118,9 +118,9 @@ $result = $Toei->project(true);
 // }
 ```
 
-## 2. Installation
+## Installation
 
-### 2-1. Composer
+### Composer
 
 Add a dependency to your project's `composer.json` file.
 
@@ -132,8 +132,16 @@ Add a dependency to your project's `composer.json` file.
 }
 ```
 
-## 3. License
+## Development
+
+### Run tests
+
+```sh
+docker run -it --rm -v $(pwd):/app composer:1.8 run-script tests
+```
+
+## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2018 [Hiroyuki Suzuki](https://mofg.net)
+Copyright (c) 2019 [Hiroyuki Suzuki](https://mofg.net)
